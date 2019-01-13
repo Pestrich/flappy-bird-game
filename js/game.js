@@ -53,4 +53,4 @@ function draw() {
 	requestAnimationFrame(draw);
 }
 
-pipeBottom.onload = draw;
+//pipeBottom.onload = draw;

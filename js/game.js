@@ -13,6 +13,13 @@ fg.src = "img/fg.png";
 pipeUp.src = "img/pipeUp.png";
 pipeBottom.src = "img/pipeBottom.png";
 
+// Звуковые файлы
+var fly = new Audio();
+var score_audio = new Audio();
+
+fly.src = "audio/fly.mp3";
+score_audio.src = "audio/score.mp3";
+
 var gap = 90;
 
 // При нажатии на какую-либо кнопку
@@ -20,6 +27,7 @@ document.addEventListener("keydown", moveUp);
 
 function moveUp() {
 	yPos -= 25;
+	fly.play();
 }
 
 // Создание блоков
@@ -56,12 +64,13 @@ function draw() {
 		if(xPos + bird.width >= pipe[i].x 
 			&& x Pos <= pipe[i].x + pipeUp.width
 			&& (yPos <= pipe[i].y + pipeUp.height
-				|| yPos + bird.height >= pipe[i].y + pipeUp.height +
-				gap) || yPos + bird.height >= cvs.height - fg.height) {
-					location.reload(); //Перезагрузка страницы
-				}
+			|| yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
+				location.reload(); //Перезагрузка страницы
+		}
+
 		if(pipe[i].x == 5) {
 			score++;
+			score_audio.play();
 		}
 	}
 	

@@ -38,11 +38,11 @@ var grav = 1;
 function draw() {
 	ctx.drawImage(bg, 0, 0);
 
-	for(var i = 0; i < pipe.lenght; i++) {
-		ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
- 		ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
+	for(var i = 0; i < pipe.length; i++) {
+		 ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
+		 ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
 
-		pipe[i].x--;
+		 pipe[i].x--;
 	}
 	
 

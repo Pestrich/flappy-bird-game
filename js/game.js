@@ -19,7 +19,7 @@ var gap = 90;
 document.addEventListener("keydown", moveUp);
 
 function moveUp() {
-	yPos -= 20;
+	yPos -= 25;
 }
 
 // Создание блоков
@@ -33,23 +33,32 @@ pipe[0] = {
 // Позиция птички
 var xPos = 10;
 var yPos = 150;
-var grav = 1;
+var grav = 1.5;
 
 function draw() {
 	ctx.drawImage(bg, 0, 0);
 
 	for(var i = 0; i < pipe.length; i++) {
-		 ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
-		 ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
+		ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
+		ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
 
-		 pipe[i].x--;
+		pipe[i].x--;
 
-		 if(pipe[i].x == 125) {
+		if(pipe[i].x == 125) {
 		 	pipe.push({
 		 		x : cvs.width,
 		 		y : Math.floor(Math.random() * pipeUp.height) - pipeUp.height
 		 	})
-		 }
+		}
+
+		// Отслеживание прикосновений	
+		if(xPos + bird.width >= pipe[i].x 
+			&& x Pos <= pipe[i].x + pipeUp.width
+			&& (yPos <= pipe[i].y + pipeUp.height
+				|| yPos + bird.height >= pipe[i].y + pipeUp.height +
+				gap)) {
+					location.reload(); //Перезагрузка страницы
+				}
 	}
 	
 

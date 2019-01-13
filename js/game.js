@@ -40,7 +40,7 @@ function draw() {
 
 	for(var i = 0; i < pipe.lenght; i++) {
 		ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
-		ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
+ 		ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
 
 		pipe[i].x--;
 	}
@@ -53,4 +53,4 @@ function draw() {
 	requestAnimationFrame(draw);
 }
 
-//pipeBottom.onload = draw;
+pipeBottom.onload = draw;

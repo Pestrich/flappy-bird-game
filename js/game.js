@@ -22,7 +22,9 @@ function moveUp() {
 	yPos -= 20;
 }
 
+// Создание блоков
 var pipe = [];
+
 pipe[0] = {
 	x : cvs.width,
 	y : 0

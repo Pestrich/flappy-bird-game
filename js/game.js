@@ -15,6 +15,13 @@ pipeBottom.src = "img/pipeBottom.png";
 
 var gap = 90;
 
+// При нажатии на какую-либо кнопку
+document.addEventListener("keydown", moveUp);
+
+function moveUp() {
+	yPos -= 20;
+}
+
 // Позиция птички
 var xPos = 10;
 var yPos = 150;

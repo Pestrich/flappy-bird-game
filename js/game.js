@@ -24,6 +24,7 @@ var gap = 90;
 
 // При нажатии на какую-либо кнопку
 document.addEventListener("click", moveUp);
+document.addEventListener("keypress", moveUp);
 document.addEventListener("keydown", moveUp);
 
 function moveUp() {
